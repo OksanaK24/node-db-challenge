@@ -4,6 +4,7 @@ exports.up = async function(knex) {
         table.increments("id")
         table.string("name")
             .notNullable()
+            .unique()
         table.string("description")
         table.boolean("completed")
             .defaultTo(false)
@@ -13,6 +14,7 @@ exports.up = async function(knex) {
         table.increments("id")
         table.string("name")
             .notNullable()
+            .unique()
         table.string("description")
     })
 

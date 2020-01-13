@@ -1,14 +1,15 @@
 const express = require("express")
-const projectModel = require("./projects-model")
-const tasksRouter = require("../tasks/tasks-router")
+const projectModel = require("./tasks-model")
 
-const router = express.Router()
-
-router.use("/:id/tasks", tasksRouter)
+const router = express.Router({
+	mergeParams: true,
+})
 
 router.get("/", async (req, res, next) => {
   try {
-    res.json(await projectModel.find())
+    const { id } = req.params
+    const tasks = await projectModel.findByProject(id)
+    res.json(tasks)
   } catch(err) {
     next(err)
   }

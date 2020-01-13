@@ -1,7 +1,10 @@
 const db = require("../data/db-config")
 
 function find() {
-	return db("projects").select()
+    const projects = db("projects").select()
+	return projects.map((project) => {
+        return {...project, completed: project.completed === 0 ? false : true}
+    })
 }
 
 async function add(data) {

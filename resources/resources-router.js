@@ -1,12 +1,12 @@
 const express = require("express")
-const projectModel = require("./projects-model")
+const resourceModel = require("./resouces-model")
 
 const router = express.Router()
 
 
 router.get("/", async (req, res, next) => {
   try {
-    res.json(await projectModel.find())
+    res.json(await resourceModel.find())
   } catch(err) {
     next(err)
   }
@@ -15,8 +15,8 @@ router.get("/", async (req, res, next) => {
 
 router.post("/", async (req, res, next) => {
   try {
-    const newProject = await projectModel.add(req.body)
-    res.status(201).json(newProject)
+    const newResource = await resourceModel.add(req.body)
+    res.status(201).json(newResource)
   } catch(err) {
     next(err)
   }

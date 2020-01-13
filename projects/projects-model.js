@@ -6,7 +6,7 @@ function find() {
 
 async function add(data) {
 	const [id] = await db("projects").insert(data)
-	return db("projects").where({ id }).first()
+	return db("projects").where({ id }).select()
 }
 
 module.exports = {

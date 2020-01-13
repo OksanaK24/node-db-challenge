@@ -1,13 +1,11 @@
 exports.seed = async (knex) => {
   await knex("tasks").insert([   
-    { description: "Task #1", notes: "Notes for Task #1", completed: true, project_id: 1 },
-    { description: "Task #2", notes: "Notes for Task #2", completed: false, project_id: 1 },
-    { description: "Task #3", notes: "Notes for Task #3", completed: true, project_id: 2 },
-    { description: "Task #4", notes: "Notes for Task #4", completed: false, project_id: 2 },
-    { description: "Task #5", notes: "Notes for Task #5", completed: false, project_id: 2 },
-    { description: "Task #6", notes: "Notes for Task #6", completed: true, project_id: 3 },
-    { description: "Task #7", notes: "Notes for Task #7", completed: true, project_id: 3 },
-    { description: "Task #8", notes: "Notes for Task #8", completed: true, project_id: 3 },
-    { description: "Task #9", notes: "Notes for Task #9", completed: false, project_id: 4 },
+    { description: "Buy tickets", notes: "", completed: true, project_id: 1 },
+    { description: "Find interesting places", notes: "Check videos, posts etc", completed: false, project_id: 1 },
+    { description: "Find where to live", notes: "Depends on the task #2", completed: false, project_id: 1 },
+    { description: "Learn back end", notes: "Repeat + continue learning", completed: false, project_id: 2 },
+    { description: "Repeat previous topics", notes: "HTML, CSS, JS (React)", completed: false, project_id: 2 },
+    { description: "Cook", notes: "Soup, salad, 2nd dish", completed: true, project_id: 3 },
+    { description: "Clean", notes: "", completed: true, project_id: 3 },
   ])
 }
